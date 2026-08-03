@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Água + Matemática</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #4fc3f7, #e1f5fe);
+      color: #033;
+      text-align: center;
+    }
+
+    header {
+      background: #0288d1;
+      color: white;
+      padding: 20px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,.2);
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    button {
+      background: #0288d1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #01579b;
+    }
+
+    footer {
+      background: #0288d1;
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>💧 Água + Matemática</h1>
+  <p>Aprendendo matemática através do consumo consciente de água.</p>
+</header>
+
+<section>
+  <div class="card">
+    <h2>Você sabia?</h2>
+    <p>
+      Uma pessoa utiliza, em média, <strong>150 litros de água por dia</strong>.
+      Com a matemática podemos calcular o consumo de uma família.
+    </p>
+
+    <h3>Calculadora</h3>
+
+    <input type="number" id="pessoas" placeholder="Quantidade de pessoas">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <h2 id="resultado"></h2>
+  </div>
+</section>
+
+<footer>
+  Desenvolvido para o projeto Água + Matemática 💙
+</footer>
+
+<script>
+function calcular() {
+    let pessoas = Number(document.getElementById("pessoas").value);
+
+    if (pessoas <= 0 || isNaN(pessoas)) {
+        document.getElementById("resultado").innerHTML =
+        "Digite um número válido.";
+        return;
+    }
+
+    let litros = pessoas * 150;
+
+    document.getElementById("resultado").innerHTML =
+    "Uma família com " + pessoas +
+    " pessoas consome aproximadamente <b>" +
+    litros + " litros</b> de água por dia.";
+}
+</script>
+
+</body>
+</html>
